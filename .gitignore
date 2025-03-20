@@ -1,0 +1,22 @@
+# Cypress generated files
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+# Cypress cache and logs
+.cypress_cache/
+cypress/logs/
+
+# Node modules
+node_modules/
+
+# Environment files (if any)
+.env
+.env.local
+.env.development
+.env.production
+
+# IDE and OS-specific files (optional)
+.DS_Store
+.vscode/
+.idea
