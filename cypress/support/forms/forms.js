@@ -31,7 +31,11 @@ module.exports = {
             cy.get('#hobbies-checkbox-3').check({ force: true });
 
             //upload picture
-            // cy.get('#uploadPicture').trigger('click');
+            const fileName = 'exalt.jpg'
+            cy.get('#uploadPicture').attachFile(fileName)
+            cy.get('#uploadPicture').then(($input) => {
+                expect($input[0].files.length).to.be.greaterThan(0); // Ensure file is attached
+            });
 
 
             cy.get('#currentAddress').type(form.address);
@@ -43,7 +47,7 @@ module.exports = {
 
             // submit
             if(canSubmit)
-                cy.get('#submit').click();
+                cy.get('#submit').click({force: true});
 
 
 

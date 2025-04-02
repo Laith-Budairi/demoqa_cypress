@@ -12,6 +12,8 @@
   "type": "commonjs",
   "description": "",
   "devDependencies": {
-    "cypress": "^8.4.0"
+    "@4tw/cypress-drag-drop": "^2.3.0",
+    "cypress": "^8.4.0",
+    "cypress-file-upload": "^5.0.8"
   }
 }

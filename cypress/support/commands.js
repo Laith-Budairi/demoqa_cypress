@@ -1,3 +1,6 @@
+import 'cypress-file-upload';
+require('@4tw/cypress-drag-drop')
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite

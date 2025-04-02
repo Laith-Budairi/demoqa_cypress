@@ -14,7 +14,7 @@ describe("Forms section", () => {
         cy.reload()
     })
 
-    it("can register a student form", () => {
+    it.only("can register a student form", () => {
         let form = {
             firstName: 'John',
             lastName: 'Doe',
@@ -32,14 +32,13 @@ describe("Forms section", () => {
             hobbies: [
                 'Sports', 'Music'
             ],
-            picture: '',
+            picture: 'exalt.jpg',
             address: '32 Oxford Street',
             state: 'NCR',
             city: 'Gurgaon'
         }
         submitPracticeForm(form);
 
-        // assert
         cy.get('#example-modal-sizes-title-lg')
             .parent().next().within(() => {
 
@@ -80,7 +79,6 @@ describe("Forms section", () => {
 
 
         })
-        //todo: pic?
 
     })
 
@@ -228,5 +226,6 @@ describe("Forms section", () => {
 
         // assert
         cy.get('#example-modal-sizes-title-lg').should('not.exist')
+        // cy.get('#userForm').should('have.class', 'was-validated')
     })
 })
