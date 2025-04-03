@@ -127,7 +127,7 @@ describe('elements section web tables', () => {
         });
     })
 
-    it.only('can search for a record by first name', () => {
+    it('can search for a record by first name', () => {
         webTables.addRecord(records[1])
 
         cy.get('#searchBox').type(records[1].firstName)

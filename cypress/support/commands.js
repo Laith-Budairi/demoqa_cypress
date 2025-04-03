@@ -1,5 +1,7 @@
 import 'cypress-file-upload';
 require('@4tw/cypress-drag-drop')
+require('cypress-delete-downloads-folder').addCustomCommand();
+
 
 // ***********************************************
 // This example commands.js shows you how to
