@@ -16,11 +16,14 @@ describe('Interactions - Sortable', () => {
 
     it('can sort list items', () => {
         cy.get('#demo-tabpane-list').first().within(() => {
-            cy.get('.list-group-item').eq(0).move({
-                deltaX: 50,
-                deltaY: 50,
-            })
+            cy.get('.list-group-item').eq(0).realMouseDown(undefined)
+                .realMouseMove(0, 80, undefined)
+                .realMouseUp(undefined)
         })
+
+        // Optional: Check if the position has changed
+        cy.get('.list-group-item').eq(0).should('contain.text', 'Two');
+        cy.get('.list-group-item').eq(1).should('contain.text', 'One');
     })
 
 })
