@@ -19,9 +19,9 @@ describe('Widgets - select menu', () => {
         cy.get('#react-select-2-option-0-1').click()
         cy.get('#selectOne').click()
         cy.get('#react-select-3-option-0-0').click()
-        // todo: fix this
-        cy.get('#oldSelectMenu').select("5");
+        cy.get('#oldSelectMenu').select("5")
+        cy.get('#oldSelectMenu').should('have.value', '5');
         cy.get('#cars').select(["volvo", "saab"]);
-        cy.wait(1000)
+        cy.get('#cars').invoke('val').should('deep.equal',["volvo", "saab"]);
     })
 })

@@ -16,13 +16,14 @@ describe('Widgets - slider', () => {
 
     it('can change the slider value', () => {
 
-        // cy.get('#sliderContainer input[type="range"]')
-        //     .click('center')
-
         cy.get('#sliderContainer input[type="range"]')
-            .invoke('val', 44)
-            .trigger('input')
-        cy.get('#sliderValue').should('have.value', '99')
+            .realClick({
+                position: 'right',
+            })
+
+        cy.get('#sliderContainer div[class="range-slider__tooltip__label"').should('have.text', 100)
+        cy.get('#sliderContainer input[type="range"]').should('have.attr', 'value', 100);
+        cy.get('#sliderValue').should('have.value', '100')
     })
 
 

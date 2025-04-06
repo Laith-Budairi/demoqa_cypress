@@ -14,15 +14,13 @@ describe('Widgets - menu', () => {
         commonHelper.reloadCurrentPage()
     })
 
-    //todo: fix
     it('can navigate through menus and sub menus', () => {
         cy.get('#nav').within(() => {
-            cy.contains('Main Item 2').trigger('mouseover')
-            cy.wait(500)
-            // cy.get('a').contains('SUB SUB LIST »').trigger('mouseover');
-            // cy.contains('Sub Sub Item 1').click();
-            //
-            // cy.url().should('include', '/expected-path');
+            cy.contains('Main Item 2').parent().realHover(undefined).should('be.visible')
+            cy.get('a').contains('SUB SUB LIST »').parent().realHover(undefined).should('be.visible')
+            //todo: sub menu not appearing
+            cy.contains('Sub Sub Item 1').parent().realHover(undefined).should('be.visible')
+
 
         })
     })
